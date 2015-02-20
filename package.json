@@ -1,0 +1,40 @@
+{
+  "name": "hubot-freight",
+  "version": "0.0.0",
+  "author": "David Cramer <dcramer@gmail.com>",
+  "description": "Freight integration for Hubot",
+  "main": "index.coffee",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/getsentry/hubot-freight"
+  },
+  "keywords": [
+    "freight",
+    "deploy",
+    "hubot",
+    "chatops",
+    "deployment"
+  ],
+  "homepage": "https://github.com/getsentry/hubot-freight",
+  "contributors": [
+    {
+      "name": "David Cramer",
+      "email": "dcramer@gmail.com"
+    }
+  ],
+  "dependencies": {
+    "hubot": ">=2.7.2"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "bugs": {
+    "url": "https://github.com/getsentry/hubot-freight/issues"
+  },
+  "licenses": [
+    {
+      "type": "Apache 2.0",
+      "url": "http://github.com/getsentry/hubot-freight/raw/master/LICENSE"
+    }
+  ]
+}
