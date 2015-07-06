@@ -36,12 +36,12 @@ var deployRevision = function(msg) {
       } else if (200 <= resp.statusCode < 400) {  // Or, not an error code.
         return;
       } else {
-        var data = JSON.parse(body)
+        var data = JSON.parse(body);
         msg.reply("Freight responded with HTTP " + resp.statusCode + ": " + data.error);
         console.error("HTTP " + resp.statusCode + ": " + body);
       }
     });
-}
+};
 
 var cancelDeploy = function(msg) {
   var app = msg.match[1];
@@ -54,7 +54,7 @@ var cancelDeploy = function(msg) {
     status: "cancelled"
   };
 
-  console.log("Freight: Making request to " + url)
+  console.log("Freight: Making request to " + url);
 
   msg.http(url)
     .header("Accept", "application/json")
@@ -67,12 +67,12 @@ var cancelDeploy = function(msg) {
       } else if (200 <= resp.statusCode < 400) {  // Or, not an error code.
         return;
       } else {
-        var data = JSON.parse(body)
+        var data = JSON.parse(body);
         msg.reply("Freight responded with HTTP " + resp.statusCode + ": " + data.error);
         console.error("HTTP " + resp.statusCode + ": " + body);
       }
     });
-}
+};
 
 module.exports = function(robot) {
   robot.respond(/deploy ([^\s\:]+)(\:([^\s]+))?( to ([^\s]+))?/i, function(msg) {
