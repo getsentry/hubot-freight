@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "author": "David Cramer <dcramer@gmail.com>",
   "description": "Freight integration for Hubot",
-  "main": "index.coffee",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/getsentry/hubot-freight"
