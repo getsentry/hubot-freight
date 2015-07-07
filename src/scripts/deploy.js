@@ -29,7 +29,7 @@ var deployRevision = function(msg) {
     .header("Accept", "application/json")
     .header("Authorization", "Key " + process.env.HUBOT_FREIGHT_API_KEY)
     .header("Content-Type", "application/json")
-    .post(JSON.stringify(data), function(err, resp, body) {
+    .post(JSON.stringify(data))(function(err, resp, body) {
       if (err) {
         msg.reply("Freight says: " + err);
         console.error(err);
@@ -60,7 +60,7 @@ var cancelDeploy = function(msg) {
     .header("Accept", "application/json")
     .header("Authorization", "Key " + process.env.HUBOT_FREIGHT_API_KEY)
     .header("Content-Type", "application/json")
-    .put(JSON.stringify(data), function(err, resp, body) {
+    .put(JSON.stringify(data))(function(err, resp, body) {
       if (err) {
         msg.reply("Freight says: " + err);
         console.error(err);
