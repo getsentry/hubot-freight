@@ -23,22 +23,23 @@ var deployRevision = function(msg) {
     app: app
   };
 
-  console.log("Freight: Making request to " + url);
+  console.log("Freight: Making request to %s", url);
 
   msg.http(url)
     .header("Accept", "application/json")
     .header("Authorization", "Key " + process.env.HUBOT_FREIGHT_API_KEY)
     .header("Content-Type", "application/json")
     .post(JSON.stringify(data))(function(err, resp, body) {
+      console.log(resp.statusCode);
       if (err) {
         msg.reply("Freight says: " + err);
-        console.error(err);
-      } else if (200 <= resp.statusCode < 400) {  // Or, not an error code.
+        console.error('HTTP %d: %s', resp.statusCode, err);
+      } else if (200 <= resp.statusCode && resp.statusCode < 400) {
         return;
       } else {
         var data = JSON.parse(body);
         msg.reply("Freight responded with HTTP " + resp.statusCode + ": " + data.error);
-        console.error("HTTP " + resp.statusCode + ": " + body);
+        console.error("HTTP %d: %s", resp.statusCode, body);
       }
     });
 };
@@ -54,7 +55,7 @@ var cancelDeploy = function(msg) {
     status: "cancelled"
   };
 
-  console.log("Freight: Making request to " + url);
+  console.log("Freight: Making request to %s", url);
 
   msg.http(url)
     .header("Accept", "application/json")
@@ -63,13 +64,13 @@ var cancelDeploy = function(msg) {
     .put(JSON.stringify(data))(function(err, resp, body) {
       if (err) {
         msg.reply("Freight says: " + err);
-        console.error(err);
-      } else if (200 <= resp.statusCode < 400) {  // Or, not an error code.
+        console.error('HTTP %d: %s', resp.statusCode, err);
+      } else if (200 <= resp.statusCode && resp.statusCode < 400) {
         return;
       } else {
         var data = JSON.parse(body);
         msg.reply("Freight responded with HTTP " + resp.statusCode + ": " + data.error);
-        console.error("HTTP " + resp.statusCode + ": " + body);
+        console.error("HTTP %d: %s", resp.statusCode, body);
       }
     });
 };
