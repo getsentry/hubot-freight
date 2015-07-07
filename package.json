@@ -1,6 +1,6 @@
 {
   "name": "hubot-freight",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "David Cramer <dcramer@gmail.com>",
   "description": "Freight integration for Hubot",
   "main": "index.js",
