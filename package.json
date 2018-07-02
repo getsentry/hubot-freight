@@ -23,7 +23,8 @@
     }
   ],
   "dependencies": {
-    "hubot": ">=2.7.2"
+    "hubot": ">=2.7.2",
+    "snyk": "^1.88.0"
   },
   "engines": {
     "node": ">=0.8.0"
@@ -36,5 +37,10 @@
       "type": "Apache 2.0",
       "url": "http://github.com/getsentry/hubot-freight/raw/master/LICENSE"
     }
-  ]
+  ],
+  "scripts": {
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
+  },
+  "snyk": true
 }

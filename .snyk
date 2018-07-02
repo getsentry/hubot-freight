@@ -1,0 +1,10 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.12.0
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:mime:20170907':
+    - hubot > express > send > mime:
+        patched: '2018-07-02T03:34:39.164Z'
+    - hubot > express > connect > serve-static > send > mime:
+        patched: '2018-07-02T03:34:39.164Z'
